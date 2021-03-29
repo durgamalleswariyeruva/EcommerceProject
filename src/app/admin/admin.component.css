@@ -1,0 +1,18 @@
+.container-fluid{
+    background-image:url("/assets/bg-4.jpg");
+}
+
+label{
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 600;
+}
+h2{
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    font-weight: 800;
+}
+img{
+    border-radius: 50%;
+}

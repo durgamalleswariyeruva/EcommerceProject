@@ -1,0 +1,10 @@
+table, th, td {
+    border: 1px solid black;
+  }
+
+  th{
+    background-color: rgba(0, 81, 255, 0.973); 
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+  }

@@ -1,0 +1,42 @@
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+    
+    <table class="table table border mt-4 text-center">
+        <tr style="font-size: 1.2rem;">
+            <th>S.no</th>
+            <th>Product name</th>
+            <th>Product brand</th>
+            <th>Product model </th>
+            <th>product Category </th>
+            <th>Manufacturing date</th>
+            <th>Product colour</th>
+            <th>Price</th>
+            <th>warranty</th>
+            <th>sold by</th>
+            <th>Image</th>
+            <th>Remove</th>
+           
+        </tr>
+        <tr *ngFor="let one of listObj; let ing=index"style="padding:20px;font-size:1rem">
+            <td>{{ing}}</td>
+            <td>{{one.pname}}</td>
+            <td>{{one.pbrand}}</td>
+            <td>{{one.pmodel}}</td>
+            <td>{{one.pCategory}}</td>
+            <td>{{one.pdate}}</td>
+            <td>{{one.pcol}}</td>
+            <td>{{one.pprice}}</td>
+            <td>{{one.pwarranty}}</td>
+            <td>{{one.psoldby}}</td>
+            <td><img src="{{one.userImgLink}}" alt="" height="50px" width="50px"></td>
+          <button class="btn btn-primary mt-1 " (click)="delete(ing)">Delete</button>
+          <button class="btn btn-secondary mt-1 " (click)="delete(ing)">Edit</button>
+        
+          
+           
+        </tr>
+    </table>
+    </div>
+</div>
+</div>

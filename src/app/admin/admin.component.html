@@ -1,0 +1,93 @@
+<div class="container-fluid">
+    <button class="btn btn-success" (click)="viewadminproducts()">View all products</button>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 mt-5">
+            <div class="card" style="background-image:url('/assets/bg-5.jpg') ;">
+                <div class="card-body">
+                    <h2><span><img src="/assets/ad-1.jpg" alt="" height="50px" weight="50px"></span> Admin</h2>
+            <form class="row g-3 bg-light p-3" #formRef="ngForm" (ngSubmit)="formRef.form.valid&&onSubmit(formRef)" style="background-image:url('/assets/bg-5.jpg') ;">
+                <div class="form-group ">
+                    <label>Product name</label>
+                    <input type="text" class="form-control" ngModel required name="pname" #pname="ngModel" >
+                    
+                </div>
+                <div class="form-group">
+                    <label>Product brand</label>
+                    <input type="text" class="form-control"  name="pbrand" #pbrand="ngModel" ngModel required>
+                    
+                </div>
+                <div class="form-group">
+                    <label>Model no</label>
+                    <input type="text" class="form-control" ngModel required name="pmodel" #pmodel="ngModel" >
+                    
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <input type="text" class="form-control" ngModel required name="pCategory" #pCategory="ngModel" >
+                    
+                </div>
+                
+                <div class="form-group">
+                    <label>Manufacturing date</label>
+                    <input type="date" class="form-control" ngModel required name="pdate" #pdate="ngModel" >
+                    
+                </div>
+                <div class="form-group">
+                    <label>Product colour</label>
+                    <input type="text" class="form-control" ngModel required name="pcol" #pcol="ngModel" >
+                    
+                </div>
+                <div class="form-group">
+                  <label>price</label>
+                  <input type="number" class="form-control" ngModel required name="pprice" #pprice="ngModel" >
+                  
+              </div>
+              <div class="form-group">
+                <label>warranty</label>
+                <input type="text" class="form-control" ngModel required name="pwarranty" #pwarranty="ngModel" >
+                
+            </div>
+            <div class="form-group">
+                <label>Soldby</label>
+                <input type="text" class="form-control" ngModel required name="psoldby" #psoldby="ngModel" >
+                
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea cols="100" rows="5"  class="form-control" ngModel required name="pdescription" #pdescription="ngModel" ></textarea>
+                
+            </div>
+            <div class="form-group">
+                <label>Instructions</label>
+                <textarea cols="100" rows="5"  class="form-control" ngModel required name="pInstructions" #pInstructions="ngModel" ></textarea>
+                
+            </div>
+         
+            <div class="form-group">
+                <label>Disclaimer</label>
+                <textarea cols="100" rows="5" class="form-control" ngModel required name="pdisclaimer" #pdisclaimer="ngModel" ></textarea>
+                
+            </div>
+
+
+
+              <div class="form-group">
+                <label>Upload product photo</label> 
+                <input type="file" class="form-control" (change)="incomingfile($event)" name="photo" accept='image/*' placeholder="Upload file" > </div>
+            
+                <div class="col-12">
+            
+                </div>
+            <br>
+                    <div class="form-group">
+                     <button type="submit" class="btn btn-success" >ADD product</button>
+                     </div> 
+            </form>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+</div>
