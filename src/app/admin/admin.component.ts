@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{AdminserviceService} from'../adminservice.service';
 import{Router} from '@angular/router';
 import { formatDate } from '@angular/common';
+import {FormControl, FormGroup,Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-admin',
@@ -9,6 +10,7 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  registerForm:FormGroup;
     //for uploading file;
     file!:File; 
 
@@ -19,10 +21,24 @@ export class AdminComponent implements OnInit {
   constructor(private as:AdminserviceService,private router:Router) { }
 
   ngOnInit(): void {
+    this.registerForm=new FormGroup({
+      pname:new FormControl(null,Validators.required),
+      pbrand:new FormControl(null,Validators.required),
+      pmodel:new FormControl(null,Validators.required),
+      pCategory:new FormControl(null,Validators.required),
+      pdate:new FormControl(null,Validators.required),
+      pcol:new FormControl(null,Validators.required),
+      pprice:new FormControl(null,Validators.required),
+      pwarranty:new FormControl(null,Validators.required),
+      psoldby:new FormControl(null,Validators.required),
+      pdescription:new FormControl(null,Validators.required),
+      pInstructions:new FormControl(null,Validators.required),
+      pdisclaimer:new FormControl(null,Validators.required),
+    })
   }
-  onSubmit(formRef:any){
-    console.log(formRef.value);
-    let proObj=formRef.value;
+  onSubmit(){
+    console.log(this.registerForm.value);
+    let proObj=this.registerForm.value;
     let formData=new FormData(); //adding image and other data to FormData object 
     formData.append('photo',this.file,this.file.name); 
     formData.append("proObj",JSON.stringify(proObj));
@@ -43,7 +59,7 @@ export class AdminComponent implements OnInit {
       }
     )
   }
-  viewadminproducts(){
+  viewproducts(){
     this.router.navigateByUrl("/admindashboard/viewadminproducts");
   }
 

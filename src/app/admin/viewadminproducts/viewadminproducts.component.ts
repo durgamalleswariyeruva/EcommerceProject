@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminserviceService } from 'src/app/adminservice.service';
+import{Router} from '@angular/router';
 
 
 @Component({
@@ -9,13 +10,13 @@ import { AdminserviceService } from 'src/app/adminservice.service';
 })
 export class ViewadminproductsComponent implements OnInit {
   listObj:any;
-  constructor( private as:AdminserviceService) { }
+  constructor( private as:AdminserviceService,private router:Router) { }
 
   ngOnInit(): void {
     this.listObj=this.as.getlist().subscribe(
       res=>{ 
         if(res["message"]=="success"){
-          this.listObj=res["list"] 
+          this.listObj=res.list;
           console.log(this.listObj);
           }
         else{
@@ -47,6 +48,13 @@ export class ViewadminproductsComponent implements OnInit {
       }
     )
 
+  }
+  addnewproduct(){
+    this.router.navigateByUrl("/admindashboard")
+  }
+  edit(one){
+    console.log(one);
+    
   }
   
 

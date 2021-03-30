@@ -1,42 +1,42 @@
 <div class="container-fluid ">
-    <div class="row">
-        <div class="col-sm-12 col-xs-12">
+   <div> 
+       <button class="btn btn-primary  mt-2" (click)="addnewproduct()" id="b1">Add new product</button>
+    </div>
     
-    <table class="table table border mt-4 text-center">
-        <tr style="font-size: 1.2rem;">
-            <th>S.no</th>
-            <th>Product name</th>
-            <th>Product brand</th>
-            <th>Product model </th>
-            <th>product Category </th>
-            <th>Manufacturing date</th>
-            <th>Product colour</th>
-            <th>Price</th>
-            <th>warranty</th>
-            <th>sold by</th>
-            <th>Image</th>
-            <th>Remove</th>
-           
-        </tr>
-        <tr *ngFor="let one of listObj; let ing=index"style="padding:20px;font-size:1rem">
-            <td>{{ing}}</td>
-            <td>{{one.pname}}</td>
-            <td>{{one.pbrand}}</td>
-            <td>{{one.pmodel}}</td>
-            <td>{{one.pCategory}}</td>
-            <td>{{one.pdate}}</td>
-            <td>{{one.pcol}}</td>
-            <td>{{one.pprice}}</td>
-            <td>{{one.pwarranty}}</td>
-            <td>{{one.psoldby}}</td>
-            <td><img src="{{one.userImgLink}}" alt="" height="50px" width="50px"></td>
-          <button class="btn btn-primary mt-1 " (click)="delete(ing)">Delete</button>
-          <button class="btn btn-secondary mt-1 " (click)="delete(ing)">Edit</button>
+   
+   <div class="row mt-3">
+        <div class="col-sm-6 col-xs-12 col-md-6 col-lg-4" *ngFor="let one of listObj">
+            <div class="card" style="height: 750px;">
+                <div class="card-body" >
+                    <img src="{{one.ImgLink}}" alt="" height="250px" width="100%">
+                    <h5 style="color: blue;">{{one.pname}}</h5>
+                    <ul>
+                        <li><strong>Brand: </strong>{{one.pbrand}}</li>
+                        <li><strong>Model: </strong>{{one.pmodel}}</li>
+                        <li><strong>Category: </strong>{{one.pCategory}}</li>
+                        <li><strong>Date: </strong>{{one.pdate}}</li>
+                        <li><strong>Brand: </strong>{{one.pbrand}}</li>
+                        <li><strong>Col: </strong>{{one.pcol}}</li>
+                        <li><strong>Price: </strong>{{one.pprice}}</li>
+                        <li><strong>Warranty: </strong>{{one.pwarranty}}</li>
+                        <li><strong>Soldby: </strong>{{one.psoldby}}</li>
+
+                   
+                    </ul>
+                    
+
+   
+                    <span><button class="btn btn-primary mt-1 " (click)="delete(ing)">Delete</button></span>
+                    <span> <button class="btn btn-success mt-1 "(click)="edit(one)" >Edit</button></span>
+
+                </div>
+
+            </div>
+    
+    
         
           
            
-        </tr>
-    </table>
     </div>
 </div>
 </div>

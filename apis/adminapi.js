@@ -35,8 +35,8 @@ adminApiObj.post("/productdetails",upload.single('photo'),errorHandler(async (re
     let productCollectionObj=req.app.get("productCollectionObj");
    console.log("product details obj is",req.body)
    let proObj=JSON.parse(req.body.proObj);
-    //add userImagelink
-    proObj.userImgLink = req.file.path;
+    //add Imagelink
+    proObj.ImgLink = req.file.path;
 let success=await productCollectionObj.insertOne(proObj)
         res.send({message:"product created"})
 
@@ -56,33 +56,17 @@ adminApiObj.post("/delete",errorHandler(async(req,res,next)=>{
         let productCollectionObj = req.app.get("productCollectionObj");
         let productObj =  req.body;
         
-        console.log("user object is",productObj);
-        //check for user in db
-        let product = await productCollectionObj.findOne({pname:productObj.pname});
-    
-        //if username alreaddy taken
-        if(product!==null){
-            let remove=await productCollectionObj.deleteOne({pname:productObj.pname});
-            res.send({message:true});
-        }
-    
-    }))
-adminApiObj.post("/delete",errorHandler(async(req,res,next)=>{
-    
-        let productCollectionObj = req.app.get("productCollectionObj");
-        let productObj =  req.body;
-        
-        console.log("user object is",productObj);
+        console.log("product object is",productObj);
         //check for product in db
         let product = await productCollectionObj.findOne({pname:productObj.pname});
     
-        //if product exists
         if(product!==null){
             let remove=await productCollectionObj.deleteOne({pname:productObj.pname});
             res.send({message:true});
         }
     
     }))
+
 
 
 
