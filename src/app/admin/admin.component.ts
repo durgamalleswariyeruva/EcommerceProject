@@ -34,7 +34,13 @@ export class AdminComponent implements OnInit {
       pdescription:new FormControl(null,Validators.required),
       pInstructions:new FormControl(null,Validators.required),
       pdisclaimer:new FormControl(null,Validators.required),
+      pquantity:new FormControl(null,Validators.required),
+      prating:new FormControl(null,Validators.required),
+      pdiscount:new FormControl(null,Validators.required),
     })
+  }
+  getcontrol(){
+    return this.registerForm.controls;
   }
   onSubmit(){
     console.log(this.registerForm.value);

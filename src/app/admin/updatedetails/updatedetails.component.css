@@ -30,9 +30,3 @@ label{
     font-weight: 600;
     padding-left: 1rem;
 }
-::placeholder {
-    color: black;
-    font-style: italic;
-
-  }
-  

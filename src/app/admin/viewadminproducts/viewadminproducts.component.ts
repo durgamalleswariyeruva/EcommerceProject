@@ -53,8 +53,8 @@ export class ViewadminproductsComponent implements OnInit {
     this.router.navigateByUrl("/admindashboard")
   }
   edit(one){
-    console.log(one);
-    
+    localStorage.setItem("pname",one["pname"]);
+    this.router.navigateByUrl("/admindashboard/updatedetails");
   }
   
 

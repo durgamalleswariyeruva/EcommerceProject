@@ -1,34 +1,29 @@
 <div class="container-fluid ">
-   <div> 
-       <button class="btn btn-primary  mt-2" (click)="addnewproduct()" id="b1">Add new product</button>
-    </div>
+  
     
    
    <div class="row mt-3">
-        <div class="col-sm-6 col-xs-12 col-md-6 col-lg-4" *ngFor="let one of listObj">
-            <div class="card" style="height: 750px;">
+        <div class="col-sm-6 col-xs-12 col-md-6 col-lg-4 mt-3 px-4" *ngFor="let one of listObj;let ing=index">
+            <div class="card" style="height: 630px;" (click)="edit(one)">
                 <div class="card-body" >
                     <img src="{{one.ImgLink}}" alt="" height="250px" width="100%">
                     <h5 style="color: blue;">{{one.pname}}</h5>
-                    <ul>
+                    <ul style="list-style-type:none;">
                         <li><strong>Brand: </strong>{{one.pbrand}}</li>
                         <li><strong>Model: </strong>{{one.pmodel}}</li>
                         <li><strong>Category: </strong>{{one.pCategory}}</li>
                         <li><strong>Date: </strong>{{one.pdate}}</li>
-                        <li><strong>Brand: </strong>{{one.pbrand}}</li>
-                        <li><strong>Col: </strong>{{one.pcol}}</li>
                         <li><strong>Price: </strong>{{one.pprice}}</li>
                         <li><strong>Warranty: </strong>{{one.pwarranty}}</li>
-                        <li><strong>Soldby: </strong>{{one.psoldby}}</li>
 
                    
                     </ul>
                     
 
-   
-                    <span><button class="btn btn-primary mt-1 " (click)="delete(ing)">Delete</button></span>
-                    <span> <button class="btn btn-success mt-1 "(click)="edit(one)" >Edit</button></span>
-
+   <div>
+                    <span><button class="btn btn-danger mt-1 " (click)="delete(ing)" style="position: absolute; left: 1rem;bottom: 1rem;"><i class="fa fa-trash" aria-hidden="true"></i>Delete</button></span>
+                   
+                </div>
                 </div>
 
             </div>

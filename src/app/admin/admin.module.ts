@@ -8,10 +8,11 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ViewadminproductsComponent } from './viewadminproducts/viewadminproducts.component';
+import { UpdatedetailsComponent } from './updatedetails/updatedetails.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, ViewadminproductsComponent],
+  declarations: [AdminComponent, ViewadminproductsComponent, UpdatedetailsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

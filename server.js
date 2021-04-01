@@ -7,7 +7,7 @@ const path=require("path");
 require("dotenv").config();
 // connect angular app with webserve
 app.use(exp.static(path.join(__dirname,"./dist/project")));
-const adminApiObj=require("./apis/adminapi");
+const adminApiObj=require("./APIS/adminApi");
 app.use("/admin",adminApiObj);
 const dburl=process.env.dburl;
 /*
@@ -30,8 +30,8 @@ const mc=require("mongodb").MongoClient;
 mc.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(client=>{
     const databaseObj=client.db("projectDatabase");
-    const productCollectionObj=databaseObj.collection("adminproductcollection");
-    app.set("productCollectionObj",productCollectionObj)
+    const adminProductCollectionObj=databaseObj.collection("adminproductcollection");
+    app.set("adminProductCollectionObj",adminProductCollectionObj)
    
     console.log("db is running successfully")
 

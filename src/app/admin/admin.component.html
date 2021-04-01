@@ -1,77 +1,148 @@
 <div class="container-fluid">
-    <button class="btn btn-primary float-end mt-2" (click)="viewproducts()">View all products</button>
+
+<div>
     <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8 mt-5">
-            <div class="card" style="background-image:url('/assets/bg-5.jpg') ;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 mt-5">
+            <div class="card bg-light" >
                 <div class="card-body">
                     <h2><span><img src="/assets/ad-1.jpg" alt="" height="50px" weight="50px"></span> Admin</h2>
             <form  [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <!--product name-->
                 <div class="form-group ">
                     <label>Product name</label>
-                    <input type="text" class="form-control"  name="pname" formControlName="pname" >
+                    <input type="text" class="form-control"  name="pname" formControlName="pname" placeholder="Enter product name..." >
+                    <p class="text text-danger" *ngIf="registerForm.get('pname').hasError('required')&& getcontrol().pname.touched">name is required</p>
                     
                 </div>
+
+                <!--product brand-->
                 <div class="form-group">
                     <label>Product brand</label>
-                    <input type="text" class="form-control"  name="pbrand" formControlName="pbrand">
+                    <input type="text" class="form-control"  name="pbrand" formControlName="pbrand" placeholder="Enter brand name...">
+                    <p class="text text-danger" *ngIf="registerForm.get('pbrand').hasError('required')&& getcontrol().pbrand.touched">Brand is required</p>
                     
                 </div>
+
+                <!--product model-->
                 <div class="form-group">
                     <label>Model</label>
-                    <input type="text" class="form-control"  name="pmodel" formControlName="pmodel" >
+                    <input type="text" class="form-control"  name="pmodel" formControlName="pmodel"placeholder="Enter  model..." >
+                    <p class="text text-danger" *ngIf="registerForm.get('pmodel').hasError('required')&& getcontrol().pmodel.touched">Model is required</p>
                     
                 </div>
-                <div class="form-group">
+
+                 <!--product model-->
+                <div class="form-group px-3  " style="width: 50%;position: absolute;left: 0px;" >
                     <label>Category</label>
-                    <input type="text" class="form-control"  name="pCategory" formControlName="pCategory" >
+                    <input type="text" class="form-control"  name="pCategory" formControlName="pCategory" placeholder="Enter category">
+                    <p class="text text-danger " *ngIf="registerForm.get('pCategory').hasError('required')&& getcontrol().pCategory.touched">Category is required</p>
                     
                 </div>
                 
-                <div class="form-group">
+
+                 <!--product model-->
+                <div class="form-group px-3 mb-3" style="width: 50%;position: absolute;right: 0px;">
                     <label>Manufacturing date</label>
-                    <input type="date" class="form-control"  name="pdate" formControlName="pdate" >
+                    <input type="date" class="form-control"  name="pdate" formControlName="pdate" placeholder="Enter date..." >
+                    <p class="text text-danger mb-3" *ngIf="registerForm.get('pdate').hasError('required')&& getcontrol().pdate.touched">Date is required</p>
                     
                 </div>
-                <div class="form-group">
+
+
+                 <!--product model-->
+                <br>
+                <div class="form-group mt-5 px-3 " style="width: 50%;position: absolute;left: 0px;padding-top: 1.4rem;padding-bottom: 1.4rem;">
                     <label>Product colour</label>
-                    <input type="text" class="form-control"  name="pcol" formControlName="pcol" >
+                    <input type="text" class="form-control"  name="pcol" formControlName="pcol" placeholder="Enter colour..." >
+                    <p class="text text-danger" *ngIf="registerForm.get('pcol').hasError('required')&& getcontrol().pcol.touched">colour is required</p>
                     
                 </div>
-                <div class="form-group">
+
+
+                 <!--product model-->
+                <div class="form-group mt-5 px-3" style="width: 50%;position: absolute;right: 0px;padding-top: 1.4rem;padding-bottom: 1.4rem;">
                   <label>price</label>
-                  <input type="number" class="form-control"  name="pprice"  formControlName="pprice" >
+                  <input type="number" class="form-control"  name="pprice"  formControlName="pprice" placeholder="Enter price...">
+                  <p class="text text-danger" *ngIf="registerForm.get('pprice').hasError('required')&& getcontrol().pprice.touched">Price is required</p>
                   
               </div>
-              <div class="form-group">
+
+
+               <!--product model-->
+              <div class="form-group " style="margin-top: 170px;">
                 <label>warranty</label>
-                <input type="text" class="form-control"  name="pwarranty" formControlName="pwarranty" >
+                <input type="text" class="form-control"  name="pwarranty" formControlName="pwarranty" placeholder="Enter warranty...">
+                <p class="text text-danger" *ngIf="registerForm.get('pwarranty').hasError('required')&& getcontrol().pwarranty.touched">Warranty is required</p>
                 
             </div>
+
+
+
+             <!--product model-->
             <div class="form-group">
                 <label>Soldby</label>
-                <input type="text" class="form-control" name="psoldby" formControlName="psoldby" >
+                <input type="text" class="form-control" name="psoldby" formControlName="psoldby" placeholder="Enter sold by">
+                <p class="text text-danger" *ngIf="registerForm.get('psoldby').hasError('required')&& getcontrol().psoldby.touched">Soldby is required</p>
                 
             </div>
+
+
+             <!--product model-->
+            <div class="form-group px-3" style="width: 50%;position: absolute;left: 0px;padding-top: 1rem;padding-bottom: 1rem;">
+                <label>Quantity</label>
+                <input type="number" class="form-control" name="pquantity" formControlName="pquantity" placeholder="Enter quantity" >
+                <p class="text text-danger" *ngIf="registerForm.get('pquantity').hasError('required')&& getcontrol().pquantity.touched">Quantity is required</p>
+                
+            </div>
+
+             <!--product model-->
+            <div class="form-group px-3" style="width: 50%;position: absolute;right: 0px;padding-top: 1rem;padding-bottom: 1rem;">
+                <label>Rating</label>
+                <input type="number" class="form-control" name="prating" formControlName="prating" placeholder="Enter Rating" >
+                <p class="text text-danger" *ngIf="registerForm.get('prating').hasError('required')&& getcontrol().prating.touched">Rating is required</p>
+                
+            </div>
+
+
+             <!--product model-->
+            
+            <div class="form-group" style="margin-top: 130px;">
+                <label>Discount</label>
+                <input type="text" class="form-control" name="pdiscount" formControlName="pdiscount" placeholder="Enter Discount">
+                <p class="text text-danger" *ngIf="registerForm.get('pdiscount').hasError('required')&& getcontrol().pdiscount.touched">Discount is required</p>
+                
+            </div>
+
+
+             <!--product model-->
+
             <div class="form-group">
                 <label>Description</label>
-                <textarea cols="100" rows="5"  class="form-control"  name="pdescription" formControlName="pdescription" ></textarea>
+                <textarea cols="100" rows="5"  class="form-control"  name="pdescription" formControlName="pdescription" placeholder="Enter your description" ></textarea>
+                <p class="text text-danger" *ngIf="registerForm.get('pdescription').hasError('required')&& getcontrol().pdescription.touched">description is required</p>
                 
             </div>
+
+
+             <!--product model-->
             <div class="form-group">
                 <label>Instructions</label>
-                <textarea cols="100" rows="5"  class="form-control"  name="pInstructions" formControlName="pInstructions" ></textarea>
+                <textarea cols="100" rows="5"  class="form-control"  name="pInstructions" formControlName="pInstructions" placeholder="Enter Instructions"></textarea>
+                <p class="text text-danger" *ngIf="registerForm.get('pInstructions').hasError('required')&& getcontrol().pInstructions.touched">Instructions is required</p>
                 
             </div>
          
+
+             <!--product model-->
             <div class="form-group">
                 <label>Disclaimer</label>
-                <textarea cols="100" rows="5" class="form-control"  name="pdisclaimer" formControlName="pdisclaimer" ></textarea>
-                
+                <textarea cols="100" rows="5" class="form-control"  name="pdisclaimer" formControlName="pdisclaimer" placeholder="Enter Disclaimer"></textarea>
+                <p class="text text-danger" *ngIf="registerForm.get('pdisclaimer').hasError('required')&& getcontrol().pdisclaimer.touched">Disclaimer is required</p>
             </div>
 
 
-
+            <!--product model-->
               <div class="form-group">
                 <label>Upload product photo</label> 
                 <input type="file" class="form-control" (change)="incomingfile($event)" name="photo" accept='image/*' placeholder="Upload file" > </div>
@@ -80,8 +151,8 @@
             
                 </div>
             <br>
-                    <div class="form-group">
-                     <button type="submit" class="btn btn-success" [disabled]="registerForm.invalid">ADD product</button>
+                    <div class="form-group" style="text-align: center;" >
+                     <button type="submit" class="btn btn-danger" [disabled]="registerForm.invalid">ADD product</button>
                      </div> 
             </form>
             
@@ -91,5 +162,6 @@
         
 
     </div>
+</div>
 
 </div>

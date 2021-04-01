@@ -1,14 +1,25 @@
 <div class="container-fluid g-0">
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary" style="background-color:blue;">
-  <a href="#" class="navbar-brand" style="padding-left: 100px;font-size: 2rem;"><strong>Flipkart</strong></a>
+  <a class="navbar-brand  "  routerLink="/admindashboard" routerLinkActive="active" style="color: cornsilk;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 30px; padding-left: 3%; ">Online Shopping 
+    <img src="https://tse4.mm.bing.net/th?id=OIP.SH2rt-Ivx6ONeEopEDbbzAHaHa&pid=Api&P=0&w=300&h=300" alt="..." height="30px" width="30px"></a>
   <button class="navbar-toggler" data-bs-target="#menu" data-bs-toggle="collapse">
       <span class="navbar-toggler-icon"></span>
   </button>
          <div id="menu" class="collapse navbar-collapse">
      <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-            <a routerLink="admindashboard" class="nav-link" routerLinkActive="active" >admindashboard</a>
+        <li class="nav-item" >
+            <a class="nav-link mt-3 mx-5 text-white" routerLink="admindashboard"  routerLinkActive="active" style="font-size: 1.2rem;font-weight: 500;"><i class="fa fa-edit"></i>Add product</a>
+
         </li>
+        <li class="nav-item">
+            <a class="nav-link mt-3 mx-5 text-white" routerLink="admindashboard/viewadminproducts"  routerLinkActive="active" style="font-size: 1.2rem;font-weight: 500;" ><i class="fa fa-xs fa-eye"></i>View products</a>
+
+        </li>
+        <li class="nav-item">
+            <a class="nav-link mt-3 mx-5 text-white" (click)="logout()"  style="font-size: 1.2rem;font-weight: 500;" > <i class="fa fa-xs fa-sign-in" aria-hidden="true" ></i> Logout </a> 
+
+        </li>
+
      
          
      </ul>

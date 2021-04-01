@@ -7,6 +7,7 @@ import{Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class AdminserviceService {
+  URL="http://localhost:4000"
 
   constructor(private hc:HttpClient) { }
   createproduct(proObj:any):Observable<any>{
@@ -22,4 +23,14 @@ export class AdminserviceService {
     
     return this.hc.post("/admin/delete",obj);
   }
+  getcurrentdata(pname):Observable<any>{
+    console.log("in service product name is",pname)
+    return this.hc.get("/admin/getproductdata/"+pname);
+  }
+ 
+  editproduct(obj):Observable<any>{
+    //console.log(obj," in ds")
+    return this.hc.put("/admin/updateproduct",obj)
+  }
+ 
 }
