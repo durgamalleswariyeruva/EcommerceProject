@@ -1,0 +1,70 @@
+<div class="container-fluid " style="margin-top:10%;">
+    <h1 class="text-center" style="color:white;">Hey {{username}}</h1>
+    <h4 class="text-center" style="color:blue">Place your order Now!</h4><br><br>
+    
+<table class="table table-bordered text-center table-hover table-striped">
+    <thead>
+        <tr class="m-auto">
+            <th>Sl.no</th>
+            <th>Product Name</th>
+            <th>Product Brand</th>
+            <th>Product price</th>
+            <th>Product type</th>
+            <th>Product quality</th>
+            <th>Image</th>
+           <!--<th>Product details</th>-->
+            <th>Description</th>
+            <th  class="text-center m-auto" colspan="2">Action</th>
+        </tr>
+    </thead>
+  <tbody *ngFor="let obj of Cart; let i=index">
+        <tr>
+            <td>{{i+1}}</td>
+            <td>
+                <div *ngIf="!obj.isEdit">{{obj.productname}}</div>
+                <div *ngIf="obj.isEdit"><input type="text" class="form-control" name="productname" [(ngModel)]="obj.productname"></div>
+            </td>
+            <td>
+                <div *ngIf="!obj.isEdit">{{obj.brand}}</div>
+                <div *ngIf="obj.isEdit"><input type="text" class="form-control" name="brand" [(ngModel)]="obj.brand"></div>
+            </td>
+            <td>
+                <div *ngIf="!obj.isEdit">{{obj.category}}</div>
+                <div *ngIf="obj.isEdit"><input type="text" class="form-control" name="category" [(ngModel)]="obj.category"></div>
+            </td>
+            <td>
+                <div *ngIf="!obj.isEdit">{{obj.price}}</div>
+                <div *ngIf="obj.isEdit"><input type="text" class="form-control" name="price" [(ngModel)]="obj.price"></div>
+            </td>
+            <td>
+                <div *ngIf="!obj.isEdit">{{obj.model}}</div>
+                <div *ngIf="obj.isEdit"><input type="text" class="form-control" name="model" [(ngModel)]="obj.model"></div>
+            </td>
+            <td>
+                <div *ngIf="!obj.isEdit">{{obj.image}}</div>
+                <div *ngIf="obj.isEdit"><input type="text" class="form-control" name="image" [(ngModel)]="obj.image"></div>
+            </td>
+           <!--<td>
+                <div *ngIf="!obj.isEdit">{{obj.productdetails}}</div>
+                <div *ngIf="obj.isEdit"><input type="text" class="form-control" name="productdetails" [(ngModel)]="obj.productdetails"></div>
+            </td>-->
+            <td>
+                <div *ngIf="!obj.isEdit">{{obj.description}}</div>
+                <div *ngIf="obj.isEdit"><input type="text" class="form-control" name="description" [(ngModel)]="obj.description"></div>
+            </td>
+             <td>
+                   <div>
+                    <button class="btn btn-danger " (click)="delete(obj)">Delete</button>
+                    </div></td>
+                <td>
+                    <div >
+                        <button class="btn btn-danger" (click)="cancel(obj)">Cancel</button>
+                    </div>
+             </td>
+
+        </tr>
+    </tbody>
+</table>
+</div>
+
+

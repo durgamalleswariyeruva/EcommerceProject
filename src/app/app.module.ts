@@ -12,6 +12,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { ResetComponent } from './reset/reset.component';
 import { SearchPipe } from './search.pipe';
 import { AuthorizationService } from './authorization.service';
+import { ViewComponent } from './view/view.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AuthorizationService } from './authorization.service';
     FooterComponent,
     LogoutComponent,
     ResetComponent,
-    SearchPipe
+    SearchPipe,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
