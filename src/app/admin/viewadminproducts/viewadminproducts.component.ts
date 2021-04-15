@@ -21,14 +21,18 @@ export class ViewadminproductsComponent implements OnInit {
           this.listObj=res.message;
           this.lengthofarray=this.listObj.length;
           this.spinning=1;
+
           }
         else{
+
           this.ts.warning(res["message"])
          
         }
       }, 
       err=>{ 
+
         this.ts.warning("Something went wrong") 
+        
        }
   ) 
   }
@@ -37,7 +41,7 @@ export class ViewadminproductsComponent implements OnInit {
 
     this.as.deleteProduct(obj).subscribe(
       res=>{
-        if(res["message"]){
+        if(res.message){
           this.ts.success("Product removed successfully");
           window.location.reload();
         
@@ -49,14 +53,51 @@ export class ViewadminproductsComponent implements OnInit {
     )
 
   }
-  addnewproduct(){
-    this.router.navigateByUrl("/admindashboard")
-  }
+  
   edit(one:any){
     localStorage.setItem("pname",one["pname"]);
     this.router.navigateByUrl("/admindashboard/updatedetails");
     
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   reloadPage() {
     window.location.reload();
  }

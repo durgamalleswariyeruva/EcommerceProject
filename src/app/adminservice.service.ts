@@ -17,7 +17,7 @@ export class AdminserviceService {
   }
   deleteProduct(obj:any):Observable<any>{
     
-    return this.hc.post("/admin/delete",obj);
+    return this.hc.delete("/admin/delete",obj);
   }
   getcurrentdata(pname:any):Observable<any>{
     return this.hc.get("/admin/getproductdata/"+pname);

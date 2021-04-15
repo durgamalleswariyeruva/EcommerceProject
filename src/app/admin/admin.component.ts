@@ -51,7 +51,7 @@ onSubmit(){
   console.log(formData);
   this.as.createproduct(formData).subscribe(
     res=>{
-   
+      console.log(res);
     
       this.ts.success("product added successfully");
         this.router.navigateByUrl("/admindashboard/viewadminproducts");
@@ -65,9 +65,7 @@ onSubmit(){
     }
   )
 }
-viewproducts(){
-  this.router.navigateByUrl("/admindashboard/viewadminproducts");
-}
+
 getcontrol(){
   return this.registerForm.controls;
 }

@@ -67,9 +67,9 @@ adminApiObj.get("/oneproduct/:pCategory",errorHandler(async(req,res,next)=>{
 }))
 
 
-adminApiObj.post("/productdetails",upload.single('photo'),errorHandler(async (req,res,next)=>{
+adminApiObj.post("/productdetails",verifyToken,upload.single('photo'),errorHandler(async (req,res,next)=>{
     console.log("url is ",req.file.path);
-    //get product collectionobject
+    //get adminproduct collectionobject
 
     let adminProductCollectionObj=req.app.get("adminProductCollectionObj");
    let proObj=JSON.parse(req.body.proObj);
@@ -81,7 +81,7 @@ adminApiObj.post("/productdetails",upload.single('photo'),errorHandler(async (re
     
 }))
 
-adminApiObj.post("/delete",errorHandler(async(req,res,next)=>{
+adminApiObj.delete("/delete",verifyToken,errorHandler(async(req,res,next)=>{
     
         let adminProductCollectionObj = req.app.get("adminProductCollectionObj");
         let productObj =  req.body;
@@ -95,7 +95,7 @@ adminApiObj.post("/delete",errorHandler(async(req,res,next)=>{
         }
     
     }))
-    adminApiObj.get("/getproductdata/:pname",errorHandler(async (req,res,next)=>{
+    adminApiObj.get("/getproductdata/:pname",verifyToken,errorHandler(async (req,res,next)=>{
         let adminProductCollectionObj = req.app.get("adminProductCollectionObj") ;
         let proObj=await adminProductCollectionObj.findOne({pname:req.params.pname});
         if(proObj!==null){
@@ -107,7 +107,7 @@ adminApiObj.post("/delete",errorHandler(async(req,res,next)=>{
         
         }))
       
-adminApiObj.put("/updateproduct",errorHandler(async(req,res,next)=>{
+adminApiObj.put("/updateproduct",verifyToken,errorHandler(async(req,res,next)=>{
             let Allproducts=req.app.get("adminProductCollectionObj")
             let productDetails=await Allproducts.findOne({pname:req.body.pname})
             if(productDetails!==null){

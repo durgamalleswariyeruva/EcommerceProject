@@ -34,11 +34,11 @@ export class UpdatedetailsComponent implements OnInit {
   ngOnInit(): void {
     this.pname=localStorage.getItem("pname");
     this.getcurrentdata();
- 
-    
+
   }
   getcontrol(){
     return this.registerForm.controls;
+
   }
   getcurrentdata(){
   this.as.getcurrentdata(this.pname).subscribe(res=>{
@@ -69,14 +69,16 @@ onSubmit(){
   let proObj=this.registerForm.value;
   this.as.editproduct(proObj).subscribe(
     res=>{
-      if(res["message"]){
+      if(res.message){
         this.ts.success("product details are updated")
         this.router.navigateByUrl("/admindashboard/viewadminproducts")
+
       }
     },
     err=>{
       this.ts.warning("Something went wrong")
       console.log(err)
+      
     }
   )
  
